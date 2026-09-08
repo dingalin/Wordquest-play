@@ -1,0 +1,9 @@
+# Original hero encouragement
+Sixteen short synthesized spoken clips, four phrases × Hebrew/English × boy/girl.
+Produced on 2026-09-08 with edge-tts 7.2.8 through Microsoft online speech.
+Hebrew: he-IL-AvriNeural / he-IL-HilaNeural. English: en-US-GuyNeural / en-US-AnaNeural.
+Rate +8%; pitch +30Hz for boy, +12Hz for girl. These are generic synthetic character voices, not recordings or imitations of real children or PopCap characters.
+Phrases: מגניב! / מעולה! / איזו מילה! / קסם אדיר!; Cool! / Excellent! / What a word! / Epic magic!
+Files: assets/hero-{he|en}-{boy|girl}-{1..4}.mp3.
+No player data is sent for speech. Clips ship with the game; playback needs no speech account, key or browser voice.
+Public Microsoft language reference: https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support
