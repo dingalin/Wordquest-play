@@ -2,5 +2,5 @@ Hspell dictionary and derived word lists: Copyright (C) 2000–2017 Nadav Har'El
 License, original dictionary and corresponding transformation source: ./licenses/hspell/
 Project: https://hspell.sourceforge.net/
 Heebo is optionally loaded from Google Fonts; Arial is the fallback.
-Hero encouragement clips are generic synthesized speech generated with Microsoft online neural voices; phrase/voice metadata: ./VOICE_ASSETS.txt.
+Hebrew character dialogue is synthesized with ElevenLabs v3; English hero encouragement uses Microsoft online neural voices. Phrase/voice metadata: ./VOICE_ASSETS.txt.
 Illustrations are original generated game assets. No PopCap assets are included.
