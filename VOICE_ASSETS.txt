@@ -1,6 +1,6 @@
 # Wordkeepers character speech
 
-Hebrew dubbing produced on 2026-09-09 using ElevenLabs v3 through the owner's connected account: eight hero encouragement clips and forty monster dialogue clips (two per encounter). Production text has no Hebrew niqqud, following the owner's listening preference.
+Hebrew dubbing produced on 2026-09-09 using ElevenLabs v3 through the owner's connected account: eight hero encouragement clips and forty monster dialogue clips (two per encounter). Production text defaults to no Hebrew niqqud, following the owner's listening preference. The frost monster's entry line uses targeted niqqud on לְחָיַיִם (cheeks) to correct a reported pronunciation problem; displayed dialogue remains unpointed.
 
 Hero phrases: מגניב! / מעולה! / איזו מילה! / קסם אדיר!
 Boy: VALF — Child, Young, Playful & Sarcastic.
