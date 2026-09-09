@@ -1,11 +1,14 @@
 # Wordkeepers character speech
 
-Hebrew dubbing produced on 2026-09-09 using ElevenLabs v3 through the owner's connected account: eight hero encouragement clips and forty monster dialogue clips (two per encounter). Production text defaults to no Hebrew niqqud, following the owner's listening preference. The frost monster's entry line uses targeted niqqud on לְחָיַיִם (cheeks) to correct a reported pronunciation problem; displayed dialogue remains unpointed.
+Hebrew dubbing produced on 2026-09-09 using ElevenLabs v3 through the owner's connected account: twenty-four hero encouragement clips and forty monster dialogue clips (two per encounter). Production text defaults to no Hebrew niqqud, following the owner's listening preference. The frost monster's entry line uses targeted niqqud on לְחָיַיִם (cheeks) to correct a reported pronunciation problem; displayed dialogue remains unpointed.
 
 Hero phrases: מגניב! / מעולה! / איזו מילה! / קסם אדיר!
+Added phrases: פגיעה יפה! / זה עבד! / עוד קסם מוצלח! / האותיות איתנו! / איזה כוח! / הקסם מתחזק! / ממשיכים לניצחון! / זה היה מרשים!
 Boy: VALF — Child, Young, Playful & Sarcastic.
 Girl: Leo 8 years girl (ElevenLabs catalogue name).
-Files: assets/hero-he-{boy|girl}-{1..4}.mp3.
+Files: assets/hero-he-{boy|girl}-{1..12}.mp3.
+
+Hero reactions play after a valid accepted attack, never while merely selecting letters or after a rejected word. Each avatar/language uses a shuffled phrase bag: all phrases play before any repeats, with no immediate repeat across cycles. Muted or busy speech does not consume a phrase; monster dialogue keeps priority. Encounter-ending attacks omit encouragement to avoid a clipped line. The initial four clips are preloaded; additional clips load on demand.
 
 Monster casting uses different delivery for each encounter:
 - VALF Goblin: encounters 1, 3, 5, 9, 15, 18.
