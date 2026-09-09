@@ -1,6 +1,33 @@
 <!doctype html>
 <html lang="he" dir="rtl">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"><meta name="theme-color" content="#101825"><title>שומרי המילים — Wordkeepers</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23172433'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='44' fill='%23e9c780'%3Eא%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="./runtime/game.css?v=c831ada8a158"></head>
-<body><div id="app"></div><script type="module" src="./runtime/game.js?v=c831ada8a158"></script></body>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"><meta name="theme-color" content="#101825"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="שומרי המילים"><title>שומרי המילים — Wordkeepers</title><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23172433'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='44' fill='%23e9c780'%3Eא%3C/text%3E%3C/svg%3E"><style>
+#startup-status{position:fixed;z-index:2147483647;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;padding:24px;background:#102726;color:#fff0cb;text-align:center;font:18px/1.7 Arial,sans-serif}
+#startup-status[hidden]{display:none}#startup-status section{max-width:440px}#startup-status h1{font-size:32px;margin:0 0 16px}#startup-status p{margin:8px 0}#startup-status button{font:inherit;color:#342619;background:#ffe0a0;border:1px solid #b6965b;border-radius:10px;min-height:48px;padding:8px 24px;margin-top:18px}#startup-status button[hidden]{display:none}
+</style><link rel="stylesheet" href="./runtime/game.css?v=856960163b5f"></head>
+<body><div id="startup-status" role="status" aria-live="polite"><section><h1>שומרי המילים</h1><p id="startup-message">פותחים את הספרייה…</p><p id="startup-help">הטעינה הראשונה עשויה לקחת כמה רגעים.</p><button id="startup-retry" type="button" hidden>ניסיון נוסף</button><noscript><p>כדי לשחק צריך להפעיל JavaScript בהגדרות הדפדפן.</p></noscript></section></div><div id="app"></div>
+<script>
+// This ES5 guard runs even if the module fails to download or cannot be parsed.
+(function () {
+ var panel=document.getElementById('startup-status'),message=document.getElementById('startup-message'),help=document.getElementById('startup-help'),retry=document.getElementById('startup-retry'),done=false,timer;
+ var english=document.documentElement.lang==='en';
+ if(english){panel.querySelector('h1').textContent='Wordkeepers';message.textContent='Opening the library…';help.textContent='The first visit may take a few moments.';retry.textContent='Try again';}
+ function failed(){
+  if(done)return;
+  clearTimeout(timer);
+  message.textContent=english?'The game could not start.':'המשחק לא הצליח להיפתח.';
+  help.textContent=english?'Check your connection and try again. On an older iPhone or iPad, update the system and open the link in Safari. Compatibility is intended for Safari 14 and newer.':'בדקו את החיבור ונסו שוב. באייפון או באייפד ישן, נסו לעדכן את המערכת ולפתוח את הקישור ב־Safari. התאימות מיועדת ל־Safari 14 ומעלה.';
+  retry.hidden=false;
+ }
+ function onError(event){if(event.target===window||event.target.tagName==='SCRIPT')failed();}
+ retry.onclick=function(){window.location.reload();};
+ window.addEventListener('error',onError,true);
+ window.addEventListener('unhandledrejection',failed);
+ timer=setTimeout(failed,25000);
+ window.wordkeepersBoot={fail:failed,ready:function(){
+  done=true;clearTimeout(timer);panel.hidden=true;
+  window.removeEventListener('error',onError,true);window.removeEventListener('unhandledrejection',failed);
+ }};
+}());
+</script><script type="module" src="./runtime/game.js?v=856960163b5f"></script></body>
 </html>
 

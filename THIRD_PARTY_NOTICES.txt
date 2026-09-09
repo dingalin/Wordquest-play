@@ -1,3 +1,4 @@
+dialog-polyfill 0.5.6: The Chromium Authors, BSD-3-Clause. License: ./licenses/dialog-polyfill/LICENSE
 Hspell dictionary and derived word lists: Copyright (C) 2000–2017 Nadav Har'El and Dan Kenigsberg. GNU AGPL v3.
 License, original dictionary and corresponding transformation source: ./licenses/hspell/
 Project: https://hspell.sourceforge.net/

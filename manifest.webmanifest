@@ -1,0 +1,21 @@
+{
+  "name": "שומרי המילים",
+  "short_name": "שומרי המילים",
+  "lang": "he",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
+  "background_color": "#101825",
+  "theme_color": "#101825",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23172433'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='44' fill='%23e9c780'%3E%D7%90%3C/text%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
