@@ -16,7 +16,13 @@ Monster casting uses different delivery for each encounter:
 - VALF young hero: encounter 6.
 - Leo: encounters 7, 11, 13.
 - Draconius: encounters 4, 8, 12, 14, 16, 19, 20.
-Files: assets/monster-he-{01..20}-{idle|hit}.mp3. Each clip corresponds to its displayed Hebrew speech bubble. Other reactions retain the game's synthesized creature effects.
+Files: assets/monster-he-{01..20}-{idle|hit|defeat}.mp3. Each clip corresponds to its displayed Hebrew speech bubble. Other reactions retain the game's synthesized creature effects.
+
+On 2026-09-10, twenty unique Hebrew defeat lines were added using the same encounter cast, plus four merchant greetings using Juanjo Goblin — High-pitched Evil Minion, a male voice with a sharp, guttural timbre and raspy delivery. This is the owner's requested masculine, grating goblin direction. Files: assets/merchant-he-{01..04}.mp3, one for each shop visit after chapters 1–4. The final chapter ends in victory and has no shop. Hebrew generation text contains no niqqud.
+
+The final merchant recordings use the male goblin voice's natural pitch and texture; they are not pitch-raised. Outer silence is trimmed with consonant padding and loudness normalized as described below. Earlier audition takes remain in the private working folder.
+
+Defeat dialogue plays once before the result transition and is allowed to finish. Merchant greetings play when entering the shop; buying an item does not restart them, and leaving stops the voice. Muting and unavailable audio never block progression. English UI uses translated captions without Hebrew dialogue playback.
 
 MP3s are mono at 44.1 kHz / 128 kbps. Quiet outer edges are trimmed with consonant padding; loudness targets -18 LUFS and -2 dBTP. Original takes are retained privately for review. Local transcription helps select matching takes; listening preference remains the final authority on character performance.
 
