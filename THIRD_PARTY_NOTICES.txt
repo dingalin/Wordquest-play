@@ -5,3 +5,5 @@ Project: https://hspell.sourceforge.net/
 Heebo is optionally loaded from Google Fonts; Arial is the fallback.
 Hebrew character dialogue is synthesized with ElevenLabs v3; English hero encouragement uses Microsoft online neural voices. Phrase/voice metadata: ./VOICE_ASSETS.txt.
 Illustrations are original generated game assets. No PopCap assets are included.
+
+Duel networking/QR: qrcode, dijkstrajs, @supabase/realtime-js and @supabase/phoenix. License texts: ./licenses/qrcode/LICENSE, ./licenses/dijkstrajs/LICENSE, ./licenses/supabase-realtime/LICENSE, ./licenses/supabase-phoenix/LICENSE.
