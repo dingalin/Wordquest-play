@@ -32,8 +32,22 @@ Files: assets/hero-en-{boy|girl}-{1..4}.mp3.
 
 No player data is sent for speech. All clips ship with the game; playback needs no speech account, API key or browser voice. No PopCap audio assets are included.
 
+## Boss comic dialogue — 2026-09-12
+
+Five Hebrew comic lines use the existing Draconius voice, generated with ElevenLabs v3 without niqqud. Files: `assets/boss-comic-{forest,frost,mirror,ember,citadel}.mp3`. Each line plays once when the comic's third panel is revealed. Skipping or closing stops it; hidden pages pause playback, and global mute/effects volume remain authoritative. English captions do not play Hebrew speech.
+
+These clips retain the provider MP3 output: mono, 44.1 kHz, approximately 163–170 kbps including container overhead, 3.44–4.08 seconds. Independent Scribe transcripts exactly match all five displayed lines. Decode, sizes and SHA-256 were verified; this is not a claim of human listening to every take. Generation and transcript provenance is retained privately in `docs/boss-comic-voices.json`. The four additional clips were generated sequentially after the owner explicitly requested completion; the existing forest clip is unchanged.
+
+## Owner-supplied combat effects — 2026-09-12
+
+The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` for actual healing and phoenix revival, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
+
+Samples are fetched and decoded ahead of combat, then independent Web Audio sources start on the existing visual impact callback, allowing overlapping hits without restarting another letter's sound. Until decoding succeeds, an immediate synthesized fallback is used; loading never triggers delayed hits. All samples follow the effects mixer, limiter, mute and pause controls. The final killing letter retains its additional explosion.
+
 ## Background music — 2026-09-10
 
-Three MP3 tracks supplied by the project owner play in a loop: `התחלה וחנות.mp3` for opening/shop and calm scenes, `קרבות רגילים.mp3` for ordinary battles, and `בוסים.mp3` for boss battles. The supplied audio is preserved unchanged; checksums are recorded in MUSIC_ASSETS.json in the source repository.
+Three MP3 tracks supplied by the project owner play in a loop: `התחלה וחנות.mp3` for shop and calm scenes, `קרבות רגילים.mp3` for ordinary battles, and `בוסים.mp3` for boss battles. The supplied audio is preserved unchanged; checksums are recorded in MUSIC_ASSETS.json in the source repository.
+
+On 2026-09-12, the owner supplied `אותיות בראש שלי.mp3` for the opening and ending. Its game copy, `assets/opening-ending-song.mp3`, preserves the MP3 audio stream without re-encoding and removes embedded cover art and metadata: stereo, 48 kHz, 126 seconds. It automatically attempts playback and loops throughout opening menus, player setup and chapter preparation until gameplay starts or a saved adventure resumes. It starts from the beginning for one play on final campaign victory. Browser autoplay restrictions may require a first gesture; stored mute remains authoritative. The opening screen includes a music-only play/mute control. Provenance and checksums are in `docs/opening-media.json`.
 
 Music loads on demand and follows the music volume control independently of sound effects. Recorded hero, monster and merchant dialogue lowers the music to 25% of the selected level, then restores it smoothly when speech ends. Pausing, hiding the tab or muting preserves the track position; repeated scene updates do not restart the music.
