@@ -40,7 +40,7 @@ These clips retain the provider MP3 output: mono, 44.1 kHz, approximately 163–
 
 ## Owner-supplied combat effects — 2026-09-12
 
-The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` for actual healing and phoenix revival, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
+The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` only for healing potions, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
 
 Samples are fetched and decoded ahead of combat, then independent Web Audio sources start on the existing visual impact callback, allowing overlapping hits without restarting another letter's sound. Until decoding succeeds, an immediate synthesized fallback is used; loading never triggers delayed hits. All samples follow the effects mixer, limiter, mute and pause controls. The final killing letter retains its additional explosion.
 
@@ -51,3 +51,5 @@ Three MP3 tracks supplied by the project owner play in a loop: `התחלה וח�
 On 2026-09-12, the owner supplied `אותיות בראש שלי.mp3` for the opening and ending. Its game copy, `assets/opening-ending-song.mp3`, preserves the MP3 audio stream without re-encoding and removes embedded cover art and metadata: stereo, 48 kHz, 126 seconds. It automatically attempts playback and loops throughout opening menus, player setup and chapter preparation until gameplay starts or a saved adventure resumes. It starts from the beginning for one play on final campaign victory. Browser autoplay restrictions may require a first gesture; stored mute remains authoritative. The opening screen includes a music-only play/mute control. Provenance and checksums are in `docs/opening-media.json`.
 
 Music loads on demand and follows the music volume control independently of sound effects. Recorded hero, monster and merchant dialogue lowers the music to 25% of the selected level, then restores it smoothly when speech ends. Pausing, hiding the tab or muting preserves the track position; repeated scene updates do not restart the music.
+
+Word-earned healing uses a separate short synthesized rising sparkle. Phoenix revival uses its dedicated fire-and-rise cue. Neither plays the owner-supplied potion recording.
