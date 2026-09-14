@@ -40,7 +40,7 @@ These clips retain the provider MP3 output: mono, 44.1 kHz, approximately 163–
 
 ## Owner-supplied combat effects — 2026-09-12
 
-The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` only for healing potions, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
+The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` only for healing potions, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. A fourth, `effect-rooster.mp3`, crows when a bonus round uncovers the whole boss painting. Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
 
 Samples are fetched and decoded ahead of combat, then independent Web Audio sources start on the existing visual impact callback, allowing overlapping hits without restarting another letter's sound. Until decoding succeeds, an immediate synthesized fallback is used; loading never triggers delayed hits. All samples follow the effects mixer, limiter, mute and pause controls. The final killing letter retains its additional explosion.
 
