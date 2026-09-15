@@ -54,7 +54,7 @@ Owner retakes after listening: `monster-he-01-hit-girl` uses הִשְׁפְּר�
 
 ## Owner-supplied combat effects — 2026-09-12
 
-The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` only for healing potions, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. A fourth, `effect-rooster.mp3`, crows when a bonus round uncovers the whole boss painting. Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
+The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` only for healing potions, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. A fourth, `effect-rooster.mp3`, crows when a bonus round uncovers the whole boss painting. On 2026-09-15 two more joined: `effect-victory-trumpet.mp3` plays the moment a battle (or a duel) is won, and `effect-victory-crowd.mp3`, an excited crowd, starts as the trumpet ends (2.45 s in, where its trailing silence begins). Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
 
 Samples are fetched and decoded ahead of combat, then independent Web Audio sources start on the existing visual impact callback, allowing overlapping hits without restarting another letter's sound. Until decoding succeeds, an immediate synthesized fallback is used; loading never triggers delayed hits. All samples follow the effects mixer, limiter, mute and pause controls. The final killing letter retains its additional explosion.
 
