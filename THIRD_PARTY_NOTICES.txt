@@ -6,4 +6,5 @@ Heebo is optionally loaded from Google Fonts; Arial is the fallback.
 Hebrew character dialogue is synthesized with ElevenLabs v3; English hero encouragement uses Microsoft online neural voices. Phrase/voice metadata: ./VOICE_ASSETS.txt.
 Illustrations are original generated game assets. No PopCap assets are included.
 
+Heebo font: Copyright 2014 The Heebo Project Authors. SIL Open Font License 1.1. License: ./licenses/heebo/OFL.txt
 Duel networking/QR: qrcode, dijkstrajs, @supabase/realtime-js and @supabase/phoenix. License texts: ./licenses/qrcode/LICENSE, ./licenses/dijkstrajs/LICENSE, ./licenses/supabase-realtime/LICENSE, ./licenses/supabase-phoenix/LICENSE.

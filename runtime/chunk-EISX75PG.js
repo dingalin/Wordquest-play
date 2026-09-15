@@ -1,0 +1,1 @@
+var r=t=>t==null?void 0:t.WordkeepersMobile;function s(){var e;let t=arguments.length>0&&arguments[0]!==void 0?arguments[0]:globalThis;return((e=r(t))==null?void 0:e.isNative)===!0}async function i(){var n;let t=arguments.length>0&&arguments[0]!==void 0?arguments[0]:globalThis,e=(n=r(t))==null?void 0:n.startupReady;if(e)try{await e}catch{}}export{s as a,i as b};
