@@ -38,6 +38,20 @@ Five Hebrew comic lines use the existing Draconius voice, generated with ElevenL
 
 These clips retain the provider MP3 output: mono, 44.1 kHz, approximately 163–170 kbps including container overhead, 3.44–4.08 seconds. Independent Scribe transcripts exactly match all five displayed lines. Decode, sizes and SHA-256 were verified; this is not a claim of human listening to every take. Generation and transcript provenance is retained privately in `docs/boss-comic-voices.json`. The four additional clips were generated sequentially after the owner explicitly requested completion; the existing forest clip is unchanged.
 
+## Hero gender and Hebrew corrections — 2026-09-15
+
+Hebrew addresses the hero differently for the boy wizard and the girl witch (שֶׁלְּךָ / שֶׁלָּךְ, עָשִׂיתָ / עָשִׂית). Twelve recorded lines speak to the hero in the second person singular: monster lines 01-hit, 03-idle, 07-hit, 08-idle, 09-hit, 09-defeat, 13-idle, 16-idle, 20-idle, 20-hit and the forest and frost boss comics. Each now has a take per hero, selected from the player's profile gender for playback and preloading (`src/voice-variants.mjs`). Displayed bubbles are unpointed and identical for both heroes.
+
+The published takes were reviewed with Gemini 3.1 Pro (text review, then two independent listening passes). A take heard consistently in one gender keeps its original file and serves that hero; the counterpart was generated as `…-girl.mp3` or `…-boy.mp3`. Four takes were feminine (09-defeat, 13-idle, boss-comic-forest, boss-comic-frost) and eight masculine. 01-hit was heard inconsistently; after listening, the owner kept the original for the boy hero.
+
+Two Hebrew errors were corrected: the Mistling (ערפילית) now says "אני מתפזרת" (`monster-he-07-defeat-v2`), and the Ice Dragon says "זה לא היה פתית שלג", because פתית is masculine (`monster-he-08-hit-v2`). The replaced originals were removed after the owner approved the new takes. Hero cheers, merchant greetings, the other boss comics and all other monster lines were neutral and unchanged.
+
+Generation text has no niqqud except on the gendered word (and מִתְפַּזֶּרֶת, הַמַּרְאָה). The fourteen new takes use each character's existing ElevenLabs v3 voice, generated sequentially through the API and processed as described above; the take with the closest ElevenLabs Scribe transcript was kept. Scribe omits vowels, so Gemini also listened to the gendered word in nine takes; each matched its intended hero.
+
+Owner retakes after listening: `monster-he-01-hit-girl` uses הִשְׁפְּרַצְתְּ with stability 1.0. Four of six takes were rejected because Scribe heard השפרצתי, and Gemini chose the remaining feminine "hishpratst" take. Scribe omitted פחח (match 0.88). `monster-he-09-defeat-boy` was re-recorded with הַמַּרְאָה; Gemini confirmed "ha-mar'a" and the masculine ending. A pointed girl take for 09-defeat was not shipped: Gemini heard an extra final vowel ("shenitsakhte") in both surviving takes, so the girl hero keeps the original feminine take. The exact spoken text, request ID, transcript and hash for each take are recorded in `VOICE_RECORDINGS.json` or `docs/boss-comic-voices.json`. Human listening is not claimed.
+
+`PENDING_VOICE_CLIPS` lists referenced takes that have not shipped. A pending take uses its listed fallback, if any; otherwise the line has no voice. The game never plays the other hero's gendered take. English captions are gender-neutral and unchanged.
+
 ## Owner-supplied combat effects — 2026-09-12
 
 The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` only for healing potions, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. A fourth, `effect-rooster.mp3`, crows when a bonus round uncovers the whole boss painting. Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
