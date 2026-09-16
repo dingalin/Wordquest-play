@@ -52,6 +52,10 @@ Owner retakes after listening: `monster-he-01-hit-girl` uses הִשְׁפְּר�
 
 `PENDING_VOICE_CLIPS` lists referenced takes that have not shipped. A pending take uses its listed fallback, if any; otherwise the line has no voice. The game never plays the other hero's gendered take. English captions are gender-neutral and unchanged.
 
+## Stage curtain voice — 2026-09-16
+
+The owner supplied an ElevenLabs v3 line in the "Branok - Evil & Villainous" voice (3.8 s). Its game copy, `assets/voice-curtain-open.mp3`, is byte-for-byte the supplied file. It plays once as the stage curtain over the website draws open, with the fabric swish and the opening song, and follows the effects volume and mute.
+
 ## Owner-supplied combat effects — 2026-09-12
 
 The owner supplied three MP3 effects, copied byte-for-byte to stable game filenames: `effect-enemy-poof.mp3` for enemy arrival/departure smoke, `effect-life-up.mp3` only for healing potions, and `effect-letter-hit.mp3` once at each letter's contact with an enemy. A fourth, `effect-rooster.mp3`, crows when a bonus round uncovers the whole boss painting. On 2026-09-15 two more joined: `effect-victory-trumpet.mp3` plays the moment a battle (or a duel) is won, and `effect-victory-crowd.mp3`, an excited crowd, starts as the trumpet ends (2.45 s in, where its trailing silence begins). Original files remain untouched locally; filename mapping and hashes are in `docs/provided-combat-effects.json`.
